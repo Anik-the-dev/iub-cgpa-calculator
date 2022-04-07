@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import InputBox from './InputBox';
+import Output from './Output';
 
 
 const Input = () => {
-    const primaryData = [{ courseNmae: '', cgpa: 1, credit: 1 }]
+    const primaryData = [{ courseNmae: '', cgpa: 0, credit: 0 }]
     const [totalCredit, setTotalCredit] = useState(0)
     const [totalCgpa, setTotalCgpa] = useState(0)
     const [inputText, setInputText] = useState(primaryData)
     const handleAddInputBoxClick = () => {
-        let newInputText = [...inputText, { courseNmae: '', cgpa: 1, credit: 1 }]
+        let newInputText = [...inputText, { courseNmae: '', cgpa: 0, credit: 0 }]
         setInputText(newInputText)
 
     }
@@ -32,19 +33,25 @@ const Input = () => {
     }
 
     // handle calculate btn..........
-    function handleCalculateBtn(totalCgpa,totalCredit){
+    function handleCalculateBtn(){
+        let mytotalCgpa = 0
+        let mytotalCredit = 0
         for(const i of inputText){
-            totalCgpa+=i.cgpa * i.credit
-            totalCredit+=i.credit
+            
+            mytotalCgpa+=i.cgpa * i.credit
+            mytotalCredit+=i.credit
+            setTotalCredit(mytotalCredit)
+            let cgpa = mytotalCgpa/mytotalCredit
+            setTotalCgpa( cgpa.toFixed(2))
+            console.log(cgpa)
             
         }
-        setTotalCredit(totalCredit)
-        let cgpa = totalCgpa/totalCredit
-        setTotalCgpa( cgpa.toFixed(2))
 
-    
 
     }
+    console.log(totalCgpa)
+
+    console.log(totalCredit)
 
 
    
@@ -66,7 +73,7 @@ const Input = () => {
             <div className='container'>
                 <button className='btn' onClick={handleAddInputBoxClick}><p>Add One More Course</p></button>
             {/* Calculate Btn */}
-                <button className='btn btn-outline' onClick={()=>handleCalculateBtn(totalCgpa,totalCredit)}><p>Calculate Your CGPA</p></button>
+                <button className='btn btn-outline' onClick={()=>handleCalculateBtn()}><p>Calculate Your CGPA</p></button>
             </div>
 
 
