@@ -129,3 +129,31 @@ label {
 .btn:hover {
     transform: scale(0.98);
 }
+
+/* output */
+.output{
+    margin-bottom: 50px;
+}
+.output .card{
+    background-color: #FF0081;
+    color:#fff;
+    padding: 65px;
+}
+
+.cg-style{
+    font-size: 5rem;
+}
+
+.d-none{
+    display: none;
+}
+
+footer{
+    background-color: #333;
+    font-size: 0.8rem;
+    color: #ddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

@@ -5,6 +5,7 @@ import Output from './Output';
 
 const Input = () => {
     const primaryData = [{ courseNmae: '', cgpa: 0, credit: 0 }]
+    const [hide, sethide] = useState(true)
     const [totalCredit, setTotalCredit] = useState(0)
     const [totalCgpa, setTotalCgpa] = useState(0)
     const [inputText, setInputText] = useState(primaryData)
@@ -14,7 +15,7 @@ const Input = () => {
 
     }
 
-    const handleOnChangeCgpa = (e, index) =>{
+    const handleOnChangeCgpa = (e, index) => {
         e.preventDefault()
         let selected = e.target.name
         let newData = [...inputText]
@@ -23,7 +24,7 @@ const Input = () => {
 
     }
 
-    const handleOnChangeCredit = (e, index) =>{
+    const handleOnChangeCredit = (e, index) => {
         e.preventDefault()
         let selected = e.target.name
         let newDataCredit = [...inputText]
@@ -33,47 +34,46 @@ const Input = () => {
     }
 
     // handle calculate btn..........
-    function handleCalculateBtn(){
+    function handleCalculateBtn() {
         let mytotalCgpa = 0
         let mytotalCredit = 0
-        for(const i of inputText){
-            
-            mytotalCgpa+=i.cgpa * i.credit
-            mytotalCredit+=i.credit
-            setTotalCredit(mytotalCredit)
-            let cgpa = mytotalCgpa/mytotalCredit
-            setTotalCgpa( cgpa.toFixed(2))
-            console.log(cgpa)
-            
+        for (const i of inputText) {
+
+            mytotalCgpa += i.cgpa * i.credit
+            mytotalCredit += i.credit
+
         }
+        setTotalCredit(mytotalCredit)
+        let cgpa = mytotalCgpa / mytotalCredit
+        setTotalCgpa(cgpa.toFixed(2))
+        sethide(false)
 
 
     }
-    console.log(totalCgpa)
-
-    console.log(totalCredit)
 
 
-   
+
+
 
 
     return (
         <div>
             <header className='header'>
-                <h1 className='text-center'>Anik's CGPA Calculator {totalCgpa}</h1>
+                <h1 className='text-center'>Sharbany's CGPA Calculator</h1>
             </header>
 
             {/* inputbox calling */}
             {
-                inputText.map((value,index) => <InputBox 
-                value = {value} index = {index} handleChangeforCgpa = {handleOnChangeCgpa}  handleOnChangeCredit= {handleOnChangeCredit}></InputBox>)
+                inputText.map((value, index) => <InputBox
+                    value={value} index={index} handleChangeforCgpa={handleOnChangeCgpa} handleOnChangeCredit={handleOnChangeCredit}></InputBox>)
             }
 
             {/* Add more btn */}
             <div className='container'>
                 <button className='btn' onClick={handleAddInputBoxClick}><p>Add One More Course</p></button>
-            {/* Calculate Btn */}
-                <button className='btn btn-outline' onClick={()=>handleCalculateBtn()}><p>Calculate Your CGPA</p></button>
+                {/* Calculate Btn */}
+                <button className='btn btn-outline' onClick={() => handleCalculateBtn()}><p>Calculate Your CGPA</p></button>
+                <Output cgpa={totalCgpa} credit={totalCredit} hide={hide}></Output>
             </div>
 
 
