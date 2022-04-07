@@ -41,6 +41,15 @@ img {
     margin: 10px;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
 /* header */
 .header {
     background-color: #FF0081;
@@ -53,6 +62,37 @@ img {
     color: #fff;
 }
 
+/* input-box */
+.input-box {
+    margin: 25px 0;
+    font-weight: 700;
+
+
+}
+
+.courseName,
+.obtainedGrade,
+.earnedCredit {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: auto;
+
+
+}
+
+input, select {
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+
+
+label {
+    margin-bottom: 10px;
+}
 
 
 /* utilities */
