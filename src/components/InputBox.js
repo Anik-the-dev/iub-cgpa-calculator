@@ -1,6 +1,8 @@
 import React from 'react';
 
-const InputBox = () => {
+const InputBox = ({handleChangeforCgpa,handleOnChangeCredit, index}) => {
+    
+
     return (
         <div className='container'>
             <div className="card input-box">
@@ -12,7 +14,8 @@ const InputBox = () => {
 
                     <div className='obtainedGrade'>
                         <label>Obtained Grade: </label>
-                        <select>
+                        <select name='cgpa' onChange={(e)=>handleChangeforCgpa(e,index)}>
+                            <option value='0.0'>Choose Your Grade</option>
                             <option value='4.0'>A</option>
                             <option value='3.7'>A-</option>
                             <option value='3.3'>B+</option>
@@ -29,7 +32,7 @@ const InputBox = () => {
 
                     <div className='earnedCredit'>
                         <label>Earned Credit: </label>
-                        <select>
+                        <select name='credit' onChange={(e)=>handleOnChangeCredit(e,index)}>
                             <option value='0'>0</option>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
