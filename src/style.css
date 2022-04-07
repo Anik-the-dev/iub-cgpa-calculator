@@ -2,31 +2,66 @@
 
 
 /* baseline style */
-body{
+body {
     line-height: 1.6;
     font-family: 'lato', sans-serif;
     color: #333;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: #333;
 }
 
-h1,h2{
-    font-weight: 300;
+h1,
+h2 {
+    font-weight: 700;
     line-height: 1.2;
     margin: 10px 0;
 }
 
-p{
-    margin: 10px,0;
+p {
+    margin: 10px, 0;
 }
 
-img{
+img {
     width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+/* header */
+.header {
+    background-color: #FF0081;
+    overflow: visible;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 25px;
+    color: #fff;
+}
+
+
+
+/* utilities */
+.container {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.text-center {
+    text-align: center;
 }
