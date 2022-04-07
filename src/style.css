@@ -133,6 +133,7 @@ label {
 /* output */
 .output{
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 .output .card{
     background-color: #FF0081;

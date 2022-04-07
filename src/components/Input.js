@@ -61,6 +61,12 @@ const Input = () => {
             <header className='header'>
                 <h1 className='text-center'>Sharbany's CGPA Calculator</h1>
             </header>
+            <div className='container'>
+                <Output cgpa={totalCgpa} credit={totalCredit} hide={hide}></Output>
+
+            </div>
+
+
 
             {/* inputbox calling */}
             {
@@ -73,7 +79,7 @@ const Input = () => {
                 <button className='btn' onClick={handleAddInputBoxClick}><p>Add One More Course</p></button>
                 {/* Calculate Btn */}
                 <button className='btn btn-outline' onClick={() => handleCalculateBtn()}><p>Calculate Your CGPA</p></button>
-                <Output cgpa={totalCgpa} credit={totalCredit} hide={hide}></Output>
+                {/* <Output cgpa={totalCgpa} credit={totalCredit} hide={hide}></Output> */}
             </div>
 
 
