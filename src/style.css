@@ -82,7 +82,8 @@ img {
 
 }
 
-input, select {
+input,
+select {
     padding: 12px 20px;
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -104,4 +105,27 @@ label {
 
 .text-center {
     text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 15px;
+    cursor: pointer;
+    background: #FF0081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #FF0081;
+    color: #FF0081;
+}
+
+.btn:hover {
+    transform: scale(0.98);
 }
